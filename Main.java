@@ -1,4 +1,6 @@
-package ThucHanh04;
+// package ThucHanh04;
+
+
 
 import java.util.Scanner;
 
@@ -58,4 +60,3 @@ public class Main {
         }
     }
 }
-

@@ -1,14 +1,18 @@
-package ThucHanh04;
+// package ThucHanh04;
 
 import java.util.ArrayList;
 
-public class StudentManager {
-    private ArrayList<Student> students = new ArrayList<>();
+import java.util.LinkedList;
 
+public class StudentManager {
+    private LinkedList<Student> students = new LinkedList<>();
+
+    // Thêm sinh viên
     public void addStudent(Student s) {
-        students.add(s);
+        students.add(s);  // LinkedList add cuối O(1)
     }
 
+    // Hiển thị danh sách
     public void displayStudents() {
         if (students.isEmpty()) {
             System.out.println("Danh sách trống!");
@@ -20,14 +24,17 @@ public class StudentManager {
         }
     }
 
+    // Tìm theo ID (duyệt tuần tự O(n))
     public Student findById(String id) {
         for (Student s : students) {
-            if (s.getId().equals(id))
+            if (s.getId().equals(id)) {
                 return s;
+            }
         }
         return null;
     }
 
+    // Xóa sinh viên theo ID
     public void deleteById(String id) {
         Student s = findById(id);
         if (s != null) {

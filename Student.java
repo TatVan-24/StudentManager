@@ -1,4 +1,4 @@
-package ThucHanh04;
+// package ThucHanh04;
 public class Student {
     private String id;
     private String name;
