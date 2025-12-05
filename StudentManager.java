@@ -5,12 +5,10 @@ import java.util.ArrayList;
 public class StudentManager {
     private ArrayList<Student> students = new ArrayList<>();
 
-    // Thêm sinh viên
     public void addStudent(Student s) {
         students.add(s);
     }
 
-    // Hiển thị danh sách
     public void displayStudents() {
         if (students.isEmpty()) {
             System.out.println("Danh sách trống!");
@@ -22,7 +20,6 @@ public class StudentManager {
         }
     }
 
-    // Tìm sinh viên theo ID
     public Student findById(String id) {
         for (Student s : students) {
             if (s.getId().equals(id))
@@ -31,7 +28,6 @@ public class StudentManager {
         return null;
     }
 
-    // Xóa sinh viên
     public void deleteById(String id) {
         Student s = findById(id);
         if (s != null) {
