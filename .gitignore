@@ -1,0 +1,7 @@
+ .vs/
+ bin/
+ /*.user
+ *.suo
+ packages/
+ *.log
+ *.cache
