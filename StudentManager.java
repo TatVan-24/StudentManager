@@ -5,14 +5,11 @@ import java.util.LinkedList;
 
 public class StudentManager {
     private LinkedList<Student> students = new LinkedList<>();
-    private ArrayList<Department> departments = new ArrayList<>(); // QUẢN LÝ DANH SÁCH KHOA
-
-    // Phương thức thêm khoa (dùng để khởi tạo dữ liệu khoa)
+    private ArrayList<Department> departments = new ArrayList<>(); 
     public void addDepartment(Department d) {
         departments.add(d);
     }
 
-    // Phương thức hiển thị danh sách khoa
     public void displayDepartments() {
         if (departments.isEmpty()) {
             System.out.println("Danh sách khoa trống!");
@@ -25,7 +22,6 @@ public class StudentManager {
         }
     }
 
-    // Phương thức tìm khoa theo số thứ tự (dùng cho việc nhập sinh viên)
     public Department getDepartmentByIndex(int index) {
         if (index > 0 && index <= departments.size()) {
             return departments.get(index - 1);
@@ -33,12 +29,10 @@ public class StudentManager {
         return null;
     }
     
-    // Thêm sinh viên (Cần truyền cả Department)
     public void addStudent(Student s) {
-        students.add(s);  // LinkedList add cuối O(1)
+        students.add(s);  
     }
 
-    // Hiển thị danh sách
     public void displayStudents() {
         if (students.isEmpty()) {
             System.out.println("Danh sách sinh viên trống!");
@@ -50,7 +44,6 @@ public class StudentManager {
         }
     }
 
-    // Tìm theo ID (duyệt tuần tự O(n))
     public Student findById(String id) {
         for (Student s : students) {
             if (s.getId().equals(id)) {
@@ -60,7 +53,6 @@ public class StudentManager {
         return null;
     }
 
-    // Xóa sinh viên theo ID
     public void deleteById(String id) {
         Student s = findById(id);
         if (s != null) {

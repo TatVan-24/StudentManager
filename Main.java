@@ -7,7 +7,6 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         StudentManager manager = new StudentManager();
 
-        // KHỞI TẠO DỮ LIỆU KHOA MẪU
         manager.addDepartment(new Department("IT", "Công nghệ Thông tin"));
         manager.addDepartment(new Department("ECO", "Kinh tế"));
         manager.addDepartment(new Department("ENG", "Ngôn ngữ Anh"));
@@ -18,17 +17,17 @@ public class Main {
             System.out.println("2. Hiển thị danh sách sinh viên");
             System.out.println("3. Tìm sinh viên theo ID");
             System.out.println("4. Xóa sinh viên");
-            System.out.println("5. Hiển thị danh sách khoa"); // THÊM CHỨC NĂNG MỚI
-            System.out.println("6. Thoát"); // CẬP NHẬT LỰA CHỌN THOÁT
+            System.out.println("5. Hiển thị danh sách khoa"); 
+            System.out.println("6. Thoát"); 
             System.out.print("Chọn: ");
 
             int choice = 0;
             try {
                 choice = sc.nextInt();
-                sc.nextLine(); // clear buffer
+                sc.nextLine(); 
             } catch (Exception e) {
                 System.out.println("Lựa chọn phải là số!");
-                sc.nextLine(); // clear input
+                sc.nextLine(); 
                 continue;
             }
 
@@ -43,7 +42,6 @@ public class Main {
                     double score = sc.nextDouble();
                     sc.nextLine();
 
-                    // YÊU CẦU CHỌN KHOA
                     manager.displayDepartments();
                     System.out.print("Chọn số thứ tự Khoa: ");
                     int depChoice = sc.nextInt();
@@ -76,7 +74,7 @@ public class Main {
                     manager.deleteById(delId);
                     break;
                     
-                case 5: // HIỂN THỊ DANH SÁCH KHOA
+                case 5: 
                     manager.displayDepartments();
                     break;
 
