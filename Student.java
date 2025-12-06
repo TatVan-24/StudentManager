@@ -3,11 +3,13 @@ public class Student {
     private String id;
     private String name;
     private double score;
+    private Department department; // THÊM THUỘC TÍNH DEPARTMENT
 
-    public Student(String id, String name, double score) {
+    public Student(String id, String name, double score, Department department) {
         this.id = id;
         this.name = name;
         this.score = score;
+        this.department = department; // KHỞI TẠO DEPARTMENT
     }
 
     public String getId() {
@@ -22,12 +24,17 @@ public class Student {
         return score;
     }
 
+    public Department getDepartment() {
+        return department;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "id='" + id + '\'' +
                 ", name='" + name + '\'' +
                 ", score=" + score +
+                ", department=" + department.getDepName() + // HIỂN THỊ TÊN KHOA
                 '}';
     }
 }

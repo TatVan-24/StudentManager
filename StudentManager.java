@@ -1,13 +1,39 @@
 // package ThucHanh04;
 
 import java.util.ArrayList;
-
 import java.util.LinkedList;
 
 public class StudentManager {
     private LinkedList<Student> students = new LinkedList<>();
+    private ArrayList<Department> departments = new ArrayList<>(); // QUẢN LÝ DANH SÁCH KHOA
 
-    // Thêm sinh viên
+    // Phương thức thêm khoa (dùng để khởi tạo dữ liệu khoa)
+    public void addDepartment(Department d) {
+        departments.add(d);
+    }
+
+    // Phương thức hiển thị danh sách khoa
+    public void displayDepartments() {
+        if (departments.isEmpty()) {
+            System.out.println("Danh sách khoa trống!");
+            return;
+        }
+        System.out.println("--- DANH SÁCH KHOA ---");
+        for (int i = 0; i < departments.size(); i++) {
+            Department d = departments.get(i);
+            System.out.println((i + 1) + ". " + d.getDepId() + " - " + d.getDepName());
+        }
+    }
+
+    // Phương thức tìm khoa theo số thứ tự (dùng cho việc nhập sinh viên)
+    public Department getDepartmentByIndex(int index) {
+        if (index > 0 && index <= departments.size()) {
+            return departments.get(index - 1);
+        }
+        return null;
+    }
+    
+    // Thêm sinh viên (Cần truyền cả Department)
     public void addStudent(Student s) {
         students.add(s);  // LinkedList add cuối O(1)
     }
@@ -15,7 +41,7 @@ public class StudentManager {
     // Hiển thị danh sách
     public void displayStudents() {
         if (students.isEmpty()) {
-            System.out.println("Danh sách trống!");
+            System.out.println("Danh sách sinh viên trống!");
             return;
         }
 
@@ -45,4 +71,3 @@ public class StudentManager {
         }
     }
 }
-
